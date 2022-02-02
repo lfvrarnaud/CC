@@ -1,0 +1,43 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model users {
+  id       Int    @id @default(autoincrement())
+  username String @unique @db.VarChar(255)
+  email    String @unique @db.VarChar(255)
+  password String @db.VarChar(255)
+}
+
+model character {
+  id           Int    @id @default(autoincrement())
+  img          String? @db.VarChar(255)
+  name         String? @db.VarChar(255)
+  level        String? @db.VarChar(255)
+  race         String? @db.VarChar(255)
+  class        String? @db.VarChar(255)
+  age          String? @db.VarChar(255)
+  taille       String? @db.VarChar(255)
+  pv           String? @db.VarChar(255)
+  armor        String? @db.VarChar(255)
+  initiative   String? @db.VarChar(255)
+  strength     String? @db.VarChar(255)
+  dexterity    String? @db.VarChar(255)
+  constitution String? @db.VarChar(255)
+  intelligence String? @db.VarChar(255)
+  wisdow       String? @db.VarChar(255)
+  charisma     String? @db.VarChar(255)
+  feats        String? @db.VarChar(255)
+  skill        String? @db.VarChar(255)
+  languages    String? @db.VarChar(255)
+  knowlegde    String? @db.VarChar(255)
+}
+
