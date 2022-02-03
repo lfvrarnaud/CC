@@ -8,6 +8,7 @@
     "serv": "nodemon src/server.js"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.5",
     "@prisma/client": "^3.9.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",

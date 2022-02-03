@@ -18,7 +18,7 @@ model users {
 }
 
 model character {
-  id           Int    @id @default(autoincrement())
+  id           Int     @id @default(autoincrement())
   img          String? @db.VarChar(255)
   name         String? @db.VarChar(255)
   level        String? @db.VarChar(255)
@@ -39,5 +39,5 @@ model character {
   skill        String? @db.VarChar(255)
   languages    String? @db.VarChar(255)
   knowlegde    String? @db.VarChar(255)
+  user_id      Int?
 }
-

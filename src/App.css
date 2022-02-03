@@ -1,42 +1,108 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*
+* NavBar
+*/
+
+.container_navbar {
+  position: fixed;
+  width: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  z-index: 999999;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar > a > img{
+  height: 75px;
+}
+
+.user_button{
+  height: 75px;
+  color: #fff;
+}
+
+/*
+* Home
+*/
+
+.container_home{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./assets/bg-dunegeons-and-dragons.jpg");
+  color: #fff;
+  position: relative;
+}
+
+.filter_bg{
+  position: absolute;
+  top:0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000030;
+}
+
+.home_text{
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-evenly;
+  z-index: 1;
 }
 
-.App-link {
-  color: #61dafb;
+.home_text > h1 {
+  font-size: 72px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.home_modal{
+  width: 60%;
+  background-color: #ffffff50;
+  font-size: 36px;
+  text-align: center;
+  color: #07354D;
+  border-radius: 15px;
+  padding: 25px;
 }
 
-button {
-  font-size: calc(10px + 2vmin);
+.button{
+  width: 250px;
+  height: 60px;
+  text-align: center;
+  background-color: #07354D;
+  color: #fff;
+  border-radius: 50px;
+  font-size: 28px;
+  border: none;
+  transition: all 300ms ease-out;
+  margin-top: 50px;
+}
+
+.button:hover{
+  background-color: #fff;
+  color: #07354D;
+  transition: all 300ms ease-out;
+
+}
+
+
+.container_character{
+  background-image: url("./assets/bg-perso.jpg");
+  min-height: 100vh;
 }
