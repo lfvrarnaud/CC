@@ -23,7 +23,7 @@ model character {
   name         String? @db.VarChar(255)
   level        String? @db.VarChar(255)
   race         String? @db.VarChar(255)
-  class        String? @db.VarChar(255)
+  job        String? @db.VarChar(255)
   age          String? @db.VarChar(255)
   taille       String? @db.VarChar(255)
   pv           String? @db.VarChar(255)

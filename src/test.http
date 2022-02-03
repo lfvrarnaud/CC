@@ -1,0 +1,25 @@
+POST http://localhost:3001/character
+Content-Type: application/json
+
+{
+    "image": "",
+    "name": "coucou",
+    "level": "coucou",
+    "race": "coucou",
+    "job": "coucou",
+    "age": "coucou",
+    "taille": "coucou",
+    "pv": "coucou",
+    "armor": "coucou",
+    "initiative": "coucou",
+    "strength": "coucou",
+    "dexterity": "coucou",
+    "constitution": "coucou",
+    "intelligence": "coucou",
+    "wisdow": "coucou",
+    "charisma": "coucou",
+    "feats": "coucou",
+    "skill": "coucou",
+    "languages": "coucou",
+    "knowlegde": "coucou"
+}
