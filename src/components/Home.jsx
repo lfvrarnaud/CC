@@ -9,18 +9,18 @@ const Home = () => {
     <div className="container_home bg_home">
       <div className="filter_bg"></div>
       <div className="home_text">
-        <h1>Personnalise ton aventure</h1>
+        <h1>Personnalisez votre aventure</h1>
         <div className="home_modal">
           <p>
             Créez vos propres fiches personnages pour vos parties de jeu de rôle
           </p>
           {user.username ? (
             <Link to="/personage">
-              <button className="button button_blue">Créez</button>
+              <button className="button button_blue">Créer</button>
             </Link>
           ) : (
             <Link to="/connexion">
-              <button className="button button_blue">Créez</button>
+              <button className="button button_blue">Connexion</button>
             </Link>
           )}
         </div>

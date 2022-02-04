@@ -12,6 +12,17 @@
   flex-direction: column;
 }
 
+.flex_center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.text_center{
+  text-align: center;
+}
+
 .bg_home {
   background-image: url("./assets/bg-dunegeons-and-dragons.jpg");
 }

@@ -28,7 +28,7 @@ const Register = () => {
       <input placeholder="Pseudo" className="form_input input_connexion" {...register("username")} />
       <input placeholder="Email" className="form_input input_connexion" {...register("email")} />
       <input placeholder="Mot de passe" type="password" className="form_input input_connexion" {...register("password")} />
-      <button className="button button_connexion button_blue">Envoyer</button>
+      <button className="button button_connexion button_blue">Inscription</button>
     </form>
   )
 }

@@ -27,7 +27,7 @@ const Login = () => {
       <h2>Connexion</h2>
       <input placeholder="Pseudo" className="form_input input_connexion" {...register("username")} />
       <input placeholder="Mot de passe" type="password" className="form_input input_connexion" {...register("clearPassword")} />
-      <button className="button button_connexion button_blue">Envoyer</button>
+      <button className="button button_connexion button_blue">Connexion</button>
     </form>
   )
 }
