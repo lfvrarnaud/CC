@@ -15,10 +15,12 @@ const Navbar = () => {
         </Link>
         {user.id ? (
           <Link to={`/compte/${user.id}`}>
+            <p>{user.username}</p>
             <UserCircleIcon className="user_button" />
           </Link>
         ) : (
           <Link to="/connexion">
+            <p>Connexion</p>
             <UserCircleIcon className="user_button" />
           </Link>
         )}

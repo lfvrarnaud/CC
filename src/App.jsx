@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import FormCharacter from "./components/FormCharacter";
 import "./App.css";
 import Connexion from "./components/Connexion";
+import Compte from "./components/Compte";
 import UserContextProvider from "./context/UserContextProvider";
 
 function App() {
@@ -19,7 +20,9 @@ function App() {
         <Routes>
           <Route index path="/" element={<Home />} />
           <Route index path="/connexion" element={<Connexion />} />
-          <Route index path="/personage" element={<FormCharacter />} />
+          <Route index path="/personage" element={<FormCharacter  />} />
+          <Route index path="/personage/:user_id/:id" element={<FormCharacter isUpdate={true} />} />
+          <Route index path="/compte/:user_id/" element={<Compte />} />
         </Routes>
       </BrowserRouter>
     </UserContextProvider>

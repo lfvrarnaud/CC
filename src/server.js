@@ -5,6 +5,7 @@ const app = express();
 const port = 3001;
 const db = require("./services/Db");
 const bcrypt = require("bcrypt");
+const req = require("express/lib/request");
 
 app.use(cors({}));
 
@@ -79,12 +80,102 @@ app.post("/character", async (req, res) => {
         user_id
       },
     });
-    console.log(character)
     res.send("Created");
   } catch (e) {
     console.log(e);
   }
 });
+
+app.put("/character/:id", async (req, res) => {
+  const {
+    avatar,
+    name,
+    level,
+    race,
+    job,
+    age,
+    taille,
+    pv,
+    armor,
+    initiative,
+    strength,
+    dexterity,
+    constitution,
+    intelligence,
+    wisdow,
+    charisma,
+    feats,
+    skill,
+    languages,
+    knowlegde,
+    user_id
+  } = req.body;
+
+
+  try {
+    const character = await db.character.update({
+      data: {
+        avatar,
+        name,
+        level,
+        race,
+        job,
+        age,
+        taille,
+        pv,
+        armor,
+        initiative,
+        strength,
+        dexterity,
+        constitution,
+        intelligence,
+        wisdow,
+        charisma,
+        feats,
+        skill,
+        languages,
+        knowlegde,
+        user_id
+      },
+      where : {
+        id : parseInt(req.params.id)
+      }
+    });
+    res.send("Update");
+  } catch (e) {
+    console.log(e);
+  }
+});
+
+app.get("/character/:user_id", async (req, res) => {
+  const {user_id} = req.params
+  try{
+    const character = (await db.character.findMany({
+      where: {
+        user_id : user_id
+      }
+    }))
+    console.log(character)
+    res.send(character)
+  }catch (e) {
+    console.log(e)
+  }
+})
+
+app.get("/character/:user_id/:id", async (req, res) => {
+  const {user_id, id} = req.params
+  try{
+    const character = (await db.character.findUnique({
+      where: {
+        id : parseInt(id)
+      }
+    }))
+    console.log(character)
+    res.send(character)
+  }catch (e) {
+    console.log(e)
+  }
+})
 
 app.post("/register", async (req, res) => {
   const { username, email, password } = req.body;
