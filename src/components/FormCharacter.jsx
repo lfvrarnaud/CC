@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import {
   createCharacter,
@@ -10,34 +10,62 @@ import {
 import Input from "./Input";
 import Textarea from "./Textarea";
 import UserContext from "../context/UserContext";
+import { notifSuccess, notifFail } from "../services/notifications";
 
 const FormCharacter = ({ isUpdate = false }) => {
   const { user_id, id } = useParams();
   const { user } = useContext(UserContext);
-  const [character,setCharacter ] = useState([]);
+  let navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
-  const { register, watch, handleSubmit } = useForm({
+  const { register, watch, handleSubmit, reset } = useForm({
     defaultValues: {
-      race: character?.race,
+      avatar: "",
+      name: "",
+      level: "",
+      race: "",
+      job: "",
+      age: "",
+      taille: "",
+      pv: "",
+      armor: "",
+      initiative: "",
+      strength: "",
+      dexterity: "",
+      constitution: "",
+      intelligence: "",
+      wisdow: "",
+      charisma: "",
+      feats: "",
+      skill: "",
+      languages: "",
+      knowlegde: "",
+      user_id: user.id,
     },
   });
-  
+
   const avatar = watch(["avatar"]);
 
   const setData = async () => {
-    setCharacter(await fetchCharacterById(user_id, id));
-    setIsLoading(false);
+    if (isUpdate) {
+      const character = await fetchCharacterById(user_id, id);
+      reset(character);
+      setIsLoading(false);
+    }
   };
 
   const onSubmit = async (data) => {
     try {
       if (isUpdate) {
         await updateCharacter(data, id);
+        notifSuccess(`Modifidation de ${data.name} effectuée`);
       } else {
+        console.log(data);
         await createCharacter(data);
+        notifSuccess(`Création de ${data.name}`);
       }
+      navigate(`/compte/${data.user_id}`)
     } catch (e) {
-      console.log(e);
+      notifFail(e.response.data);
     }
   };
 
@@ -48,7 +76,7 @@ const FormCharacter = ({ isUpdate = false }) => {
     setIsLoading(false);
   }, []);
 
-  console.log(character);
+  console.log();
   return (
     <>
       {isLoading ? (
@@ -70,7 +98,7 @@ const FormCharacter = ({ isUpdate = false }) => {
                   </div>
                 </div>
                 <div className="block_form">
-                  <Input register={register} info="avatar" label="Avatar :" />
+                  <Input register={register} info="avatar" label="Url de l'img :" />
                   <Input register={register} info="name" label="Nom :" />
                   <Input register={register} info="level" label="Niveau : " />
                 </div>
@@ -169,14 +197,15 @@ const FormCharacter = ({ isUpdate = false }) => {
               </div>
               <input
                 className="input_invisible"
-                value={user_id ? user_id : user.id}
+                value={user.id}
                 {...register("user_id")}
               />
             </div>
-
+            
             <button className="red_button button" type="submit">
               Sauvegarder
             </button>
+            
           </form>
         </div>
       )}

@@ -53,7 +53,6 @@ app.post("/character", async (req, res) => {
     user_id
   } = req.body;
 
-
   try {
     const character = await db.character.create({
       data: {
@@ -111,7 +110,6 @@ app.put("/character/:id", async (req, res) => {
     user_id
   } = req.body;
 
-
   try {
     const character = await db.character.update({
       data: {
@@ -152,7 +150,7 @@ app.get("/character/:user_id", async (req, res) => {
   try{
     const character = (await db.character.findMany({
       where: {
-        user_id : user_id
+        user_id : parseInt(user_id)
       }
     }))
     console.log(character)

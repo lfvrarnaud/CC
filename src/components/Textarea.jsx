@@ -35,7 +35,7 @@ const Textarea = ({ register, label, info, extra, character }) => {
                     className={
                       extra
                         ? "form_input input_character form_textarea_col"
-                        : " flex_center"
+                        : " flex_center text_center"
                     }
                   >
                     {item}

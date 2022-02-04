@@ -15,7 +15,7 @@ const Home = () => {
             Créez vos propres fiches personnages pour vos parties de jeu de rôle
           </p>
           {user.username ? (
-            <Link to="/personage">
+            <Link to="/personnage">
               <button className="button button_blue">Créer</button>
             </Link>
           ) : (

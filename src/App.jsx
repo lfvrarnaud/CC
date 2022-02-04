@@ -21,8 +21,8 @@ function App() {
         <Routes>
           <Route index path="/" element={<Home />} />
           <Route index path="/connexion" element={<Connexion />} />
-          <Route index path="/personage" element={<FormCharacter  />} />
-          <Route index path="/personage/:user_id/:id" element={<FormCharacter isUpdate={true} />} />
+          <Route index path="/personnage" element={<FormCharacter  />} />
+          <Route index path="/personnage/:user_id/:id" element={<FormCharacter isUpdate={true} />} />
           <Route index path="/fiche/:user_id/:id" element={<CharacterSheet />} />
           <Route index path="/compte/:user_id/" element={<Compte />} />
         </Routes>

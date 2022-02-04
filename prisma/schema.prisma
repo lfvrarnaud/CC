@@ -39,5 +39,5 @@ model character {
   skill        String? @db.VarChar(255)
   languages    String? @db.VarChar(255)
   knowlegde    String? @db.VarChar(255)
-  user_id      String? @db.VarChar(255)
+  user_id      Int? 
 }

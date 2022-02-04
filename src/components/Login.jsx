@@ -4,12 +4,13 @@ import { useContext } from "react";
 import {fetchLogin} from "../services/api"
 import UserContext from "../context/UserContext";
 import { notifSuccess, notifFail } from '../services/notifications';
+import { useNavigate } from "react-router-dom";
 
 
 
 const Login = () => {
   const { setUser } = useContext(UserContext);
-
+  let navigate = useNavigate()
   const { register , handleSubmit } = useForm({});
 
   const onSubmit = async (data) => {
@@ -17,6 +18,7 @@ const Login = () => {
       const login = await fetchLogin(data);
       setUser(login)
       notifSuccess(`Bonjour ${data.username}`)
+      navigate(`/compte/${login.id}`)
     } catch (e) {
       notifFail(e.response.data)
     }
