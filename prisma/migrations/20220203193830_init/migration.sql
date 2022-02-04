@@ -13,11 +13,11 @@ CREATE TABLE `users` (
 -- CreateTable
 CREATE TABLE `character` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `img` VARCHAR(255) NULL,
+    `avatar` TEXT NULL,
     `name` VARCHAR(255) NULL,
     `level` VARCHAR(255) NULL,
     `race` VARCHAR(255) NULL,
-    `class` VARCHAR(255) NULL,
+    `job` VARCHAR(255) NULL,
     `age` VARCHAR(255) NULL,
     `taille` VARCHAR(255) NULL,
     `pv` VARCHAR(255) NULL,
@@ -33,6 +33,7 @@ CREATE TABLE `character` (
     `skill` VARCHAR(255) NULL,
     `languages` VARCHAR(255) NULL,
     `knowlegde` VARCHAR(255) NULL,
+    `user_id` INTEGER NULL,
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

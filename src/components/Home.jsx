@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div className="container_home">
+    <div className="container_home bg_home">
       <div className="filter_bg"></div>
       <div className="home_text">
         <h1>Personnalise ton aventure</h1>
