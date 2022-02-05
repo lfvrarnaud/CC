@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div className="container_home bg_home">
       <div className="filter_bg"></div>
-      <div className="home_text">
+      <div className="home_text text_center">
         <h1>Personnalisez votre aventure</h1>
         <div className="home_modal">
           <p>

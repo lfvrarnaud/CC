@@ -1,0 +1,39 @@
+.container_navbar {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  z-index: 10;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.navbar > a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+}
+
+.navbar > a > img {
+  height: 60px;
+}
+
+.user_button {
+  height: 50px;
+  color: #fff;
+}
+
+@media only screen and (max-width: 1150px){
+  .navbar {
+    width: 100%;
+    justify-content: space-around;
+  }
+}

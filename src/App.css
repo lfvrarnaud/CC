@@ -25,10 +25,14 @@
 
 .bg_home {
   background-image: url("./assets/bg-dunegeons-and-dragons.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .bg_paper {
   background-image: url("./assets/bg-perso.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .button {
@@ -45,7 +49,7 @@
 }
 
 .form_input {
-  width: 200px;
+  width: 100%;
   height: 40px;
   border-radius: 15px;
   border: none;
@@ -54,206 +58,6 @@
   margin: 10px 0;
   outline: 2px solid transparent;
   outline-offset: 2px;
-}
-
-.input_invisible{
-  display: none;
-}
-
-
-/*
-* NavBar
-*/
-
-.container_navbar {
-  position: absolute;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0;
-  z-index: 10;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  width: 50%;
-}
-
-.navbar > a {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: #fff;
-  font-size: 20px;
-}
-
-.navbar > a > img {
-  height: 60px;
-}
-
-.user_button {
-  height: 50px;
-  color: #fff;
-}
-
-
-
-/*
-* Connexion
-*/
-
-.container_connexion{
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal_connexion{
-  display: flex;
-flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  background-color: #ffffff50;
-  color: #07354d;
-  border-radius: 15px;
-  padding: 50px;
-}
-
-.modal_connexion > h2 {
-  font-size: 30px;
-  margin: 15px 0;
-}
-
-.form_connexion{
-  height: 100%;
-  align-items: center;
-  margin:25px 0 ;
-}
-
-.input_connexion{
-  border: 2px solid #07354d;
-  color: #07354d;
-}
-
-.button_connexion {
-  width: 150px;
-  height: 50px;
-  font-size: 18px;
-  margin: 15px 0;
-
-}
-
-
-/*
-* Home
-*/
-
-.container_home {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  color: #fff;
-  position: relative;
-}
-
-.filter_bg {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #00000030;
-}
-
-.home_text {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  z-index: 1;
-}
-
-.home_text > h1 {
-  font-size: 72px;
-}
-
-.home_modal {
-  width: 60%;
-  background-color: #ffffff50;
-  font-size: 36px;
-  text-align: center;
-  color: #07354d;
-  border-radius: 15px;
-  padding: 25px;
-}
-
-.button_blue {
-  background-color: #07354d;
-}
-
-.button_blue:hover {
-  background-color: #fff;
-  color: #07354d;
-  transition: all 300ms ease-out;
-}
-
-/*
-* Form character
-*/
-
-.bg_character {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.container_form {
-  margin-top: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.container_block_form {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin: 10px 0;
-}
-
-.cadre_character {
-  width: 150px;
-  height: 220px;
-  border-radius: 15px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-}
-
-.block_form {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-  width: 200px;
-  margin: 0px 50px;
-}
-
-.block_form > label {
-  width: 100%;  
-}
-
-.input_character {
-  background-color: #ffffff50;
 }
 
 .form_textarea {
@@ -268,64 +72,15 @@ flex-direction: column;
   font-family: "Korinna-Bold";
 }
 
-.red_button {
-  background-color: #731c1b;
-  margin: 20px;
-  box-shadow: 2px 3px 7px black;
+.input_invisible{
+  display: none;
 }
 
-.red_button:hover {
-  background-color: #fff;
-  color: #731c1b;
-  transition: all 300ms ease-out;
-}
 
-/*
-* Compte
-*/
 
-.container_compte {
-  min-height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.container_compte > h1 {
-  font-size: 50px;
-  margin: 100px 0 50px 0;
-}
-
-.container_character {
-  width: 50%;
-  display: flex;
-  justify-content: space-around;
-}
-
-.container_card{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: #000;
-  cursor: pointer;
-  transition: all 300ms ease-in;
-
-}
-
-.container_card:hover {
-  transform: scale(1.1);
-  transition: all 300ms ease-in;
-}
-
-.container_card > p{
-  font-size: 20px;
-  background-color: #ffffff70;
-  width: 100%;
-  text-align: center;
-  padding: 5px;
-  border-radius: 15px;
-  margin: 15px;
-  
+@media only screen and (max-width: 500px){
+  .button{
+    width: 200px;
+    height: 50px;
+  }
 }

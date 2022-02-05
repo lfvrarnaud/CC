@@ -1,3 +1,9 @@
+@import './assets/CSS/navbar.css';
+@import './assets/CSS/home.css';
+@import './assets/CSS/connexion.css';
+@import './assets/CSS/compte.css';
+@import './assets/CSS/character.css';
+
 @font-face {
   font-family: 'dungeon';
   src: local('dungeon'), url(./fonts/dungeon.ttf) format('truetype');
