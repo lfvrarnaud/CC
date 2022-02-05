@@ -145,7 +145,7 @@ const CharacterSheet = () => {
             </div>
           </div>
   
-          <Link to={`/personage/${user_id}/${id}`} type="submit">
+          <Link to={`/personnage/${user_id}/${id}`} type="submit">
             <button className="red_button button" className="red_button button">
               Modifier
             </button>
