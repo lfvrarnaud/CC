@@ -69,7 +69,7 @@ const CharacterSheet = () => {
                 />
               </div>
               <div className="container_block_form flex_col">
-                <div className="flex">
+                <div className="flex container_block_form">
                   <div className="block_form">
                     <Input character={character.pv} info="pv" label="PV :" />
                     <Input
@@ -118,7 +118,7 @@ const CharacterSheet = () => {
                     />
                   </div>
                 </div>
-                <div className="flex">
+                <div className="flex container_block_form">
                   <div className="block_form ">
                     <Textarea
                       character={character.skill}

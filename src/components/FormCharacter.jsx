@@ -121,7 +121,7 @@ const FormCharacter = ({ isUpdate = false }) => {
                   />
                 </div>
                 <div className="container_block_form flex_col">
-                  <div className="flex">
+                  <div className="flex container_block_form">
                     <div className="block_form">
                       <Input register={register} info="pv" label="PV :" />
                       <Input
@@ -170,7 +170,7 @@ const FormCharacter = ({ isUpdate = false }) => {
                       />
                     </div>
                   </div>
-                  <div className="flex">
+                  <div className="flex container_block_form">
                     <div className="block_form ">
                       <Textarea
                         register={register}
