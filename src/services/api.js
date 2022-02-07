@@ -25,3 +25,8 @@ export const createUser = async (data) => {
 export const fetchLogin = async (data) => {
   return (await axios.post(`${API_URL}/login`, data)).data;
 };
+
+export const fetchMe = async () => {
+  return (await axios.get(`${API_URL}/me`)).data;
+};
+

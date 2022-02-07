@@ -28,6 +28,14 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
+app.get('/me', (req, res) => {
+  try {
+    res.send(req.session.user);
+  } catch (e) {
+    res.status(401).send('unauthorized');
+  }
+})
+
 app.post("/character", async (req, res) => {
   const {
     avatar,
