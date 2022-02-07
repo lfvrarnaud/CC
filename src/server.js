@@ -7,7 +7,12 @@ const db = require("./services/Db");
 const bcrypt = require("bcrypt");
 const req = require("express/lib/request");
 
-app.use(cors({}));
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
 
 app.use(
   session({
@@ -28,13 +33,13 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.get('/me', (req, res) => {
+app.get("/me", (req, res) => {
   try {
     res.send(req.session.user);
   } catch (e) {
-    res.status(401).send('unauthorized');
+    res.status(401).send("unauthorized");
   }
-})
+});
 
 app.post("/character", async (req, res) => {
   const {
@@ -58,7 +63,7 @@ app.post("/character", async (req, res) => {
     skill,
     languages,
     knowlegde,
-    user_id
+    user_id,
   } = req.body;
 
   try {
@@ -84,7 +89,7 @@ app.post("/character", async (req, res) => {
         skill,
         languages,
         knowlegde,
-        user_id
+        user_id,
       },
     });
     res.send("Created");
@@ -115,7 +120,7 @@ app.put("/character/:id", async (req, res) => {
     skill,
     languages,
     knowlegde,
-    user_id
+    user_id,
   } = req.body;
 
   try {
@@ -141,11 +146,11 @@ app.put("/character/:id", async (req, res) => {
         skill,
         languages,
         knowlegde,
-        user_id
+        user_id,
       },
-      where : {
-        id : parseInt(req.params.id)
-      }
+      where: {
+        id: parseInt(req.params.id),
+      },
     });
     res.send("Update");
   } catch (e) {
@@ -154,34 +159,34 @@ app.put("/character/:id", async (req, res) => {
 });
 
 app.get("/character/:user_id", async (req, res) => {
-  const {user_id} = req.params
-  try{
-    const character = (await db.character.findMany({
+  const { user_id } = req.params;
+  try {
+    const character = await db.character.findMany({
       where: {
-        user_id : parseInt(user_id)
-      }
-    }))
-    console.log(character)
-    res.send(character)
-  }catch (e) {
-    console.log(e)
+        user_id: parseInt(user_id),
+      },
+    });
+    console.log(character);
+    res.send(character);
+  } catch (e) {
+    console.log(e);
   }
-})
+});
 
 app.get("/character/:user_id/:id", async (req, res) => {
-  const {user_id, id} = req.params
-  try{
-    const character = (await db.character.findUnique({
+  const { user_id, id } = req.params;
+  try {
+    const character = await db.character.findUnique({
       where: {
-        id : parseInt(id)
-      }
-    }))
-    console.log(character)
-    res.send(character)
-  }catch (e) {
-    console.log(e)
+        id: parseInt(id),
+      },
+    });
+    console.log(character);
+    res.send(character);
+  } catch (e) {
+    console.log(e);
   }
-})
+});
 
 app.post("/register", async (req, res) => {
   const { username, email, password } = req.body;
@@ -190,13 +195,13 @@ app.post("/register", async (req, res) => {
     await db.$queryRaw`INSERT INTO users (username, email, password) VALUES (${username}, ${email}, ${await bcrypt.hash(
       password,
       12
-    )})`
+    )})`;
     const user = await db.users.findUnique({
-      where: { username: username }
+      where: { username: username },
     });
     res.status(201).send(user);
   } catch (e) {
-    console.log(e)
+    console.log(e);
     if (e.meta) {
       res.status(400).send(e.meta.message);
     } else if (e.sqlMessage) {
@@ -212,7 +217,7 @@ app.post("/login", async (req, res) => {
 
   try {
     const user = await db.users.findUnique({
-      where: { username: username }
+      where: { username: username },
     });
     if (
       user === null ||
@@ -220,7 +225,7 @@ app.post("/login", async (req, res) => {
     ) {
       return res.status(401).send("unauthorized");
     }
-  
+
     const { password, ...userObject } = user;
     if (user) {
       req.session.user = userObject;

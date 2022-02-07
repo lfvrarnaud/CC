@@ -1,4 +1,5 @@
 import axios from "axios";
+axios.defaults.withCredentials = true;
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
 
@@ -29,4 +30,3 @@ export const fetchLogin = async (data) => {
 export const fetchMe = async () => {
   return (await axios.get(`${API_URL}/me`)).data;
 };
-

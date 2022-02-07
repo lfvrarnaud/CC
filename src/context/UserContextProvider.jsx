@@ -11,10 +11,10 @@ const UserContextProvider = ({ children }) => {
     const fetchData = async () => {
       setUser(await fetchMe());
       setLoading(false);
-    }
+    };
 
     fetchData();
-  })
+  }, []);
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
