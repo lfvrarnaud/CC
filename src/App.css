@@ -12,14 +12,13 @@
   flex-direction: column;
 }
 
-.flex_center{
+.flex_center {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
-.text_center{
+.text_center {
   text-align: center;
 }
 
@@ -66,20 +65,22 @@
   font-family: "Korinna-Bold";
 }
 
-.form_textarea_col{
+.form_textarea_col {
   height: 390px;
   padding: 10px;
   font-family: "Korinna-Bold";
 }
 
-.input_invisible{
+.input_invisible {
   display: none;
 }
 
+.width {
+  width: 100%;
+}
 
-
-@media only screen and (max-width: 500px){
-  .button{
+@media only screen and (max-width: 500px) {
+  .button {
     width: 200px;
     height: 50px;
   }

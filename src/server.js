@@ -158,6 +158,20 @@ app.put("/character/:id", async (req, res) => {
   }
 });
 
+app.delete("/character/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    await db.character.delete({
+      where: {
+        id: parseInt(id),
+      },
+    });
+    res.send("Deleted");
+  } catch (e) {
+    console.log(e);
+  }
+});
+
 app.get("/character/:user_id", async (req, res) => {
   const { user_id } = req.params;
   try {

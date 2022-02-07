@@ -1,7 +1,7 @@
 const Textarea = ({ register, label, info, extra, character }) => {
-  let list = []
-  if(!register){
-    list = character.split("\n") 
+  let list = [];
+  if (!register) {
+    list = character.split("\n");
   }
 
   return (
@@ -23,13 +23,11 @@ const Textarea = ({ register, label, info, extra, character }) => {
           <label>{label}</label>
           <div
             className={
-              extra
-                ? ""
-                : "form_input input_character form_textarea"
+              extra ? "width" : "form_input input_character form_textarea"
             }
           >
             {list.map((item) => {
-              if (item !== "") {
+              if (item !== null) {
                 return (
                   <p
                     className={

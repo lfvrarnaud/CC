@@ -11,6 +11,10 @@ export const updateCharacter = async (data, id) => {
   return await axios.put(`${API_URL}/character/${id}`, data);
 };
 
+export const deleteCharacter = async (id) => {
+  return await axios.delete(`${API_URL}/character/${id}`);
+};
+
 export const fetchCharacterById = async (user_id, id) => {
   return (await axios(`${API_URL}/character/${user_id}/${id}`)).data;
 };

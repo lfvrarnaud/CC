@@ -25,12 +25,14 @@ const Compte = () => {
         {characters.map((character, id) => {
           return <Card character={character} user={user.id} key={id} />;
         })}
-        <Link to={`/personnage`} className="container_card">
-          <div className="cadre_character">
-           <PlusIcon/>
-          </div>
-          <p>Nouveau personnage</p>
-        </Link>
+        <div className="container_card">
+          <Link to={`/personnage`}>
+            <div className="cadre_character">
+              <PlusIcon />
+            </div>
+            <p>Nouveau personnage</p>
+          </Link>
+        </div>
       </div>
     </div>
   );

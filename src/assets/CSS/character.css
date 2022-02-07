@@ -25,10 +25,11 @@
 .cadre_character {
   width: 150px;
   height: 220px;
-  border-radius: 15px;
+  border-radius: 20px;
   overflow: hidden;
   display: flex;
   justify-content: center;
+  margin: auto;
 }
 
 .block_form {
@@ -41,7 +42,7 @@
 }
 
 .block_form > label {
-  width: 100%;  
+  width: 100%;
 }
 
 .input_character {
@@ -60,17 +61,16 @@
   transition: all 300ms ease-out;
 }
 
-@media only screen and (max-width: 1200px){
-  .container_block_form{
+@media only screen and (max-width: 1200px) {
+  .container_block_form {
     justify-content: center;
     width: 100%;
     flex-direction: column;
-  
   }
 }
 
-@media only screen and (max-width: 500px){
-  .container_block_form{
+@media only screen and (max-width: 500px) {
+  .container_block_form {
     width: 100%;
     flex-direction: column;
   }
